@@ -44,6 +44,7 @@ dependencies {
     def activityVersion = '1.6.0'
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-runtime:$room_version")
+    implementation "androidx.room:room-ktx:$room_version"
     annotationProcessor("androidx.room:room-compiler:$room_version")
     implementation("androidx.activity:activity-ktx:$activityVersion")
 

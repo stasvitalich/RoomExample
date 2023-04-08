@@ -6,17 +6,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [ListEntity::class], version = 1)
-abstract class GroceryDatabase : RoomDatabase() {
+abstract class GroceryDatabase:RoomDatabase() {
 
     abstract fun groceryDao():GroceryDAO
 
     companion object{
-
         @Volatile
-        private var INSTANCE: GroceryDatabase? = null
+        private var INSTANCE:GroceryDatabase? = null
 
-        fun getInstance(context:Context):GroceryDatabase{
-
+        fun getInstance(context: Context):GroceryDatabase{
             synchronized(this){
                 var instance = INSTANCE
 
@@ -26,8 +24,7 @@ abstract class GroceryDatabase : RoomDatabase() {
                         GroceryDatabase::class.java,
                         "grocery_database"
                     ).fallbackToDestructiveMigration().build()
-
-                    INSTANCE = instance
+                    INSTANCE=instance
                 }
                 return instance
             }
