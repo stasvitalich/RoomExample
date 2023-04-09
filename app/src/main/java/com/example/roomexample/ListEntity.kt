@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey
 data class ListEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    @ColumnInfo(name = "item-name")
+    @ColumnInfo(name = "name_of_item")
     val name: String = "",
-    @ColumnInfo(name = "item-quantity")
+    @ColumnInfo(name = "quantity_of_item")
     val quantity: String = ""
 )

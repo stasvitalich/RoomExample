@@ -7,17 +7,17 @@ import kotlinx.coroutines.flow.Flow
 interface GroceryDAO {
 
     @Insert
-    suspend fun insert(entity: ListEntity)
+    suspend fun insert(listEntity: ListEntity)
 
     @Update
-    suspend fun update(entity: ListEntity)
+    suspend fun update(listEntity: ListEntity)
 
     @Delete
-    suspend fun delete(entity: ListEntity)
+    suspend fun delete(listEntity: ListEntity)
 
     @Query("SELECT * FROM `grocery-table`")
     fun fetchAllGroceries():Flow<List<ListEntity>>
 
     @Query("SELECT * FROM `grocery-table` where id=:id")
-    fun fetchGroceryById(id:Int):Flow<ListEntity>
+    fun fetchGroceryById(id:Int):Flow<List<ListEntity>>
 }
